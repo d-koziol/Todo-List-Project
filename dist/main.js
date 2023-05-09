@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ UI)\n/* harmony export */ });\nclass UI {\n  static loadHomepage() {\n    UI.newTask();\n  }\n\n  static newTask() {\n    const addTaskBtn = document.getElementById(\"addNewTask\");\n    addTaskBtn.addEventListener(\"click\", () => {\n      console.log(\"dupa\");\n    });\n  }\n}\n\n\n//# sourceURL=webpack://todo-list-project/./src/modules/UI.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ UI)\n/* harmony export */ });\nclass UI {\n  static loadHomepage() {\n    UI.newTask();\n  }\n\n  static newTask() {\n    const addTaskBtn = document.getElementById(\"addNewTask\");\n    addTaskBtn.addEventListener(\"click\", () => {\n      const form = document.createElement(\"form\");\n\n      const nameLabel = document.createElement(\"label\");\n      nameLabel.textContent = \"Name:\";\n      const nameInput = document.createElement(\"input\");\n      nameInput.type = \"text\";\n      nameInput.name = \"name\";\n      form.appendChild(nameLabel);\n      form.appendChild(nameInput);\n\n      // Dodaj pozostałe pola formularza\n\n      document.body.appendChild(form);\n    });\n  }\n}\n\n\n//# sourceURL=webpack://todo-list-project/./src/modules/UI.js?");
 
 /***/ })
 
