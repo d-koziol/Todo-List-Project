@@ -60,7 +60,11 @@ nav {
   min-height: 5rem;
 }
 
-h2 {
+#add-new-task {
+  margin-top: -50rem;
+}
+
+# h2 {
   text-align: center;
 }
 
