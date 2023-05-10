@@ -7,9 +7,10 @@ export default class UI {
     const addTaskBtn = document.getElementById("add-new-task");
     const projectsView = document.querySelector(".projects-view");
     addTaskBtn.addEventListener("click", () => {
-      const taskForm = document.createElement("task-form");
+      const taskForm = document.createElement("form");
+      addTaskBtn.classList.add("active");
+      taskForm.setAttribute("id", "new-task-popup");
       taskForm.innerHTML += `
-        <form id="newTaskPopup">
           <input class="input-add-task-popup"
             id="input-add-task-popup""
             type="text"
@@ -41,11 +42,14 @@ export default class UI {
           </fieldset>
           <br>
           <button type="submit" value="submit">Submit</button>
-          <button type="reset" valuer="reset">Submit</button>
-        </form>
+          <button type="reset" valuer="reset">Reset</button>
+      
       `;
-
       projectsView.appendChild(taskForm);
+
+      if (addTaskBtn.classList.contains("active")) {
+        addTaskBtn.disabled = true;
+      }
     });
   }
 }
