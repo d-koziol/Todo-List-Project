@@ -1,7 +1,8 @@
 export default class Task {
-  constructor(name, dueDate = "No date") {
+  constructor(name, dueDate = "No date", importancy) {
     this.name = name;
     this.dueDate = dueDate;
+    this.importancy = importancy;
   }
 
   setName(name) {
@@ -18,6 +19,14 @@ export default class Task {
 
   getDate() {
     return this.dueDate;
+  }
+
+  setImportancy(importancy) {
+    this.importancy = importancy;
+  }
+
+  getImportancy() {
+    return this.importancy;
   }
 
   getDateFormatted() {

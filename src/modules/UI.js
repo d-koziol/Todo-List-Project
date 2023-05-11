@@ -1,3 +1,4 @@
+import Task from "./Task.js";
 export default class UI {
   static loadHomepage() {
     UI.newTask();
@@ -11,8 +12,8 @@ export default class UI {
       addTaskBtn.classList.add("active");
       taskForm.setAttribute("id", "new-task-popup");
       taskForm.innerHTML += `
-          <input class="input-add-task-popup"
-            id="input-add-task-popup""
+          <input class="input-name-task-popup"
+            id="input-name-task-popup""
             type="text"
             placeholder="New Quest Name"
           />
@@ -46,10 +47,25 @@ export default class UI {
       
       `;
       projectsView.appendChild(taskForm);
+      console.log("Przed tworzeniem obiektu Task");
 
       if (addTaskBtn.classList.contains("active")) {
         addTaskBtn.disabled = true;
       }
+
+      taskForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const taskName = document.getElementById("input-name-task-popup").value;
+        const taskDate = document.getElementById("input-date-task-popup").value;
+        const taskImportancy = document.querySelector(
+          'input[name="importancy"]:checked'
+        ).value;
+        const task1 = new Task(taskName, taskDate, taskImportancy);
+        console.log(task1);
+
+        taskForm.reset();
+      });
     });
   }
 }
