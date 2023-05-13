@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&display=swap');
+
 *,
 *::after,
 *::before {
@@ -9,6 +11,7 @@
 html {
   position: relative;
   min-height: 100%;
+  font-family: 'Raleway', sans-serif;
 }
 
 body {
@@ -24,18 +27,18 @@ main {
 }
 
 button {
-  width: 10rem;
+  width: 11rem;
   height: 3rem;
   box-shadow: 0px 10px 14px -7px #276873;
-  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background: linear-gradient(to bottom, #8a0dff 5%, #413708 100%);
   background-color: #599bb3;
   border-radius: 8px;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Arial;
-  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
   font-weight: bold;
+  font-size: 14px;
   padding: 13px 32px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #3d768a;
