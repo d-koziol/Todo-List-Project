@@ -1,4 +1,5 @@
 import Task from "./Task.js";
+import TodoList from "./TodoList.js";
 export default class UI {
   static loadHomepage() {
     UI.newTask();
@@ -65,6 +66,7 @@ export default class UI {
         console.log(task1);
 
         taskForm.reset();
+        TodoList.addTask();
       });
     });
   }
