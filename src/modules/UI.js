@@ -48,26 +48,29 @@ export default class UI {
       
       `;
       projectsView.appendChild(taskForm);
-      console.log("Przed tworzeniem obiektu Task");
 
       if (addTaskBtn.classList.contains("active")) {
         addTaskBtn.disabled = true;
       }
+      UI.addNewTask();
+    });
+  }
 
-      taskForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+  static addNewTask() {
+    const taskForm = document.querySelector("form");
+    taskForm.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-        const taskName = document.getElementById("input-name-task-popup").value;
-        const taskDate = document.getElementById("input-date-task-popup").value;
-        const taskImportancy = document.querySelector(
-          'input[name="importancy"]:checked'
-        ).value;
-        const task1 = new Task(taskName, taskDate, taskImportancy);
-        console.log(task1);
+      const taskName = document.getElementById("input-name-task-popup").value;
+      const taskDate = document.getElementById("input-date-task-popup").value;
+      const taskImportancy = document.querySelector(
+        'input[name="importancy"]:checked'
+      ).value;
+      const task1 = new Task(taskName, taskDate, taskImportancy);
+      console.log(task1);
 
-        taskForm.reset();
-        TodoList.addTask();
-      });
+      taskForm.reset();
+      TodoList.addTask(taskName, taskDate, taskImportancy);
     });
   }
 }
