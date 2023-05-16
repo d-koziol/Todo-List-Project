@@ -73,4 +73,13 @@ export default class UI {
       TodoList.addTask(taskName, taskDate, taskImportancy);
     });
   }
+
+  //   static createList(){
+  //     const projectsView = document.querySelector(".projects-view");
+  //     const taskForm = document.querySelector("form");
+  //     taskForm.addEventListener("submit", (e) => {
+  //       e.preventDefault();
+
+  //   }
+  // }
 }
