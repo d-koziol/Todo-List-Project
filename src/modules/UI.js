@@ -58,6 +58,7 @@ export default class UI {
 
   static addNewTask() {
     const taskForm = document.querySelector("form");
+    const tasksList = document.querySelector(".ordered-tasks-list");
     taskForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -66,20 +67,14 @@ export default class UI {
       const taskImportancy = document.querySelector(
         'input[name="importancy"]:checked'
       ).value;
-      const task1 = new Task(taskName, taskDate, taskImportancy);
-      console.log(task1);
+      const newTask = new Task(taskName, taskDate, taskImportancy);
+
+      const listItem = document.createElement("li");
+      listItem.innerText = `Name: ${newTask.getName()}, Date: ${newTask.getDateFormatted()}, Importancy: ${newTask.getImportancy()}`;
 
       taskForm.reset();
       TodoList.addTask(taskName, taskDate, taskImportancy);
+      tasksList.appendChild(listItem);
     });
   }
-
-  //   static createList(){
-  //     const projectsView = document.querySelector(".projects-view");
-  //     const taskForm = document.querySelector("form");
-  //     taskForm.addEventListener("submit", (e) => {
-  //       e.preventDefault();
-
-  //   }
-  // }
 }

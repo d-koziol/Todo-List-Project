@@ -99,7 +99,7 @@ h2 {
   align-items: center;
 }
 
-#tasks-list {
+.tasks-list {
   display: flex;
   justify-content: center;
   align-items: center;
