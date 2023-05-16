@@ -26,20 +26,20 @@ export default class UI {
           <fieldset>
           <legend>How important the quest is ?</legend>
           <div>
-            <input id="input-check-task-popup1"
+          <input id="input-check-task-popup1"
+            name="importancy"
+            value="important"
+            type="radio"
+            />
+            <label for="input-check-task-popup1"
+            name="input-check-task-popup">Important</label>
+          <input id="input-check-task-popup2"
+            value="not-important"
             name="importancy"
             type="radio"
             />
-          <label for="input-check-task-popup1"
-            name="input-check-task-popup" 
-            value="important">Important</label>
-            <input id="input-check-task-popup2"
-            name="importancy"
-            type="radio"
-          />
-          <label for="input-check-task-popup2"
-            name="input-check-task-popup" 
-            value="not-important">It can wait</label>
+            <label for="input-check-task-popup2"
+            name="input-check-task-popup" >It can wait</label>
           </div>
           </fieldset>
           <br>
